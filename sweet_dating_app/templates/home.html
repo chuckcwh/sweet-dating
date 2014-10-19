@@ -1,0 +1,45 @@
+{% extends 'base_template.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    <link type="text/css" href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+{% endblock title %}
+
+{% block content %}
+    <div class="jumbotron" id="home">
+        <div class="container">
+            <h1>RelationUs</h1>
+            <p></p>
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                     <div class="panel-heading">User Window</div>
+                      <div class="panel-body">
+                        <div id="login_Reg">
+                            {% if user.is_authenticated %}
+                                <p>Welcome back, {{ user.username }}</p>
+                                <button class="btn btn-default">Browse Targets</button>
+                                <a href="{% url 'add_portfolio' %}">Add Portfolio</a>
+                                <hr>
+                                <p>Last log-in at: {{ user.last_login }}</p>
+                            {% else %}
+                                <div class="btn-toolbar" role="toolbar">
+                                  <div class="btn-group">
+                                    <button class="btn-btn-default" id="regis">Register</button>
+                                    <button class="btn-btn-default" id="log_in">Log-In</button>
+                                  </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                      </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+{#    <a href="{% url 'pokemon_battle' %}">Battle</a>#}
+{% endblock content %}
