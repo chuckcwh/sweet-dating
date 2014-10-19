@@ -1,8 +1,7 @@
 from time import sleep
 from django.core.urlresolvers import reverse
-from django.test import TestCase, LiveServerTestCase
+from django.test import LiveServerTestCase
 from selenium.webdriver.common.keys import Keys
-from sweet_dating_app.models import Portfolio
 from django.contrib.auth.models import User
 
 # Create your tests here.
