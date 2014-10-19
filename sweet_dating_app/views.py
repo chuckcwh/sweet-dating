@@ -13,6 +13,7 @@ def home(request):
 def faq(request):
     return render(request, 'faq.html')
 
+
 @login_required
 def add_portfolio(request):
     if request.method == 'POST':
@@ -31,6 +32,7 @@ def add_portfolio(request):
         form = PortfolioForm()
     data = {"form": form}
     return render(request, 'add_portfolio.html', data)
+
 
 @login_required
 def profile(request):
