@@ -1,0 +1,11 @@
+## The following requirements were added by pip --freeze:
+Django==1.7
+Pillow==2.6.1
+coverage==3.7.1
+django-debug-toolbar==1.2.1
+pep8==1.5.7
+psycopg2==2.5.4
+pyflakes==0.8.1
+selenium==2.43.0
+sqlparse==0.1.13
+wsgiref==0.1.2

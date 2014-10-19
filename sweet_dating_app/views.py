@@ -31,6 +31,7 @@ def add_portfolio(request):
     else:
         form = PortfolioForm()
     data = {"form": form}
+
     return render(request, 'add_portfolio.html', data)
 
 
