@@ -48,4 +48,4 @@ class PortfolioForm(forms.ModelForm):
 
     class Meta:
         model = Portfolio
-        fields = ("gender", "age", "user_photo", "user_photo2", "target_gender")
+        fields = ("gender", "age", "user_photo", "target_gender")

@@ -17,13 +17,14 @@ def faq(request):
 def add_portfolio(request):
     if request.method == 'POST':
         form = PortfolioForm(request.POST, request.FILES)
+        print "form"
         if form.is_valid():
+            print "form is valid"
             Portfolio.objects.create(user=request.user,
                                      gender=form.cleaned_data['gender'],
                                      age=form.cleaned_data['age'],
+                                     target_gender=form.cleaned_data['target_gender'],
                                      user_photo=form.cleaned_data['user_photo'],
-                                     user_photo2=form.cleaned_data['user_photo2'],
-                                     target_gender=form.cleaned_data['target_gender']
                                     )
             return redirect("profile")
     else:

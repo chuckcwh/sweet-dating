@@ -12,11 +12,14 @@
       <div class="jumbotron" id="bg">
         <div class="container">
             <h1>faq</h1>
-            <form method="post" action=".">
+            <form method="POST">
                 {% csrf_token %}
-                {{ form.as_table }}
-
-                <input type="submit" value="Submit">
+                    <ul>
+                {% for field in form %}
+                    <li>{{ field.label_tag | lower }}{{ field }}</li>
+                {% endfor %}
+                    </ul>
+                <input type="submit" value="Submit Event"/>
             </form>
         </div>
     </div>
